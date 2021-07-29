@@ -1,12 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import './Message.css';
 
-function Message(props) {
-  return (<div className="Message">
-    <p className="Message-p">Сообщение от: {props.name}</p>
-    </div>);
-}
+import MessageList from './Message';
+
 
 function App() {
   return (
@@ -14,16 +10,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
-        <Message name="Вася" />
+        <MessageList />
         
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
