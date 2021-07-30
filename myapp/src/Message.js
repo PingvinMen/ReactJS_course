@@ -1,13 +1,17 @@
-import React, { useCallback, useState} from 'react';
+import React, { useCallback, useEffect, useState} from 'react';
 import './Message.css';
 
 export const MessageList = (props) =>{
 
     const [messages,setMessage] = useState([]);
 
-    const answerMessage = useCallback(() => {
-        const newMessageBot = {author:"Bot", text:"Отстань"};
-        setMessage([...messages, newMessageBot]);
+    useEffect(() => {
+        if(messages.length && messages[messages.length - 1].author !== "Bot"){
+            const newMessageBot = {author:"Bot", text:"Отстань"};
+            setTimeout(function(){
+                setMessage([...messages, newMessageBot]);
+            },1500)
+        }
     }, [messages]);
 
     const pushMessage = useCallback(() => {
