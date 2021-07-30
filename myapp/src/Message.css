@@ -1,8 +1,48 @@
-.Message{
-border: 1px solid #61dafb;
+.messenger__chat{
+background-color: #fff;
+color: #282c34;
 border-radius: 10px;
+width: 800px;
+height: 700px;
+overflow: scroll;
 }
-.Message-p{
-    margin: 10px;
-    color: #61dafb;
+
+.messenger__message{
+    display: flex;
+    margin-top: 5px;
+    border-radius: 50px;
+    width: fit-content;
+    padding: 2px 10px;
+    background-color: #b9caed;
+}
+
+.messenger__name{
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 2px;
+    
+}
+.messenger__text{
+    font-size: 16px;
+}
+
+.messenger__control{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.messenger__text-str{
+    width: -webkit-fill-available;
+    border: 0px;
+}
+
+.messenger__button{
+    background-color: #b9caed;
+    padding: 10px;
+    font-size: 18px;
+    border: 0px;
+    border-radius: 0 20px 20px 0;
+
 }

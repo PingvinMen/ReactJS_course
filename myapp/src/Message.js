@@ -23,13 +23,18 @@ export const MessageList = (props) =>{
 
     return(
         <>
+        <div className="messenger__chat">
         {messages.map((mess) =>
-            <div>
-                <h3>{mess.author}</h3>
-                <p>{mess.text}</p>
+            <div className="messenger__message">
+                <div className="messenger__name">{mess.author}:</div>
+                <div className="messenger__text">{mess.text}</div>
             </div>)
-        }   <input type="text" id="textMessage"></input>
-            <button className="counter-button" onClick={pushMessage}>push</button>
+        }
+        </div>
+        <div className="messenger__control">
+        <input type="text" className="messenger__text-str" id="textMessage"></input>
+        <button className="messenger__button" onClick={pushMessage}>Отправить</button>
+        </div>
         </>
     );
 
