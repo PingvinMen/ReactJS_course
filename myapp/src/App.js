@@ -3,7 +3,6 @@ import './App.css';
 
 import MessageList from './Message';
 
-
 function App() {
   return (
     <div className="App">

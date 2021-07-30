@@ -1,40 +1,33 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState} from 'react';
 import './Message.css';
 
-function MessageList(){
+export const MessageList = (props) =>{
 
-    const [messages] = useState([
-        {author : "Ваяс", text : "Сообщение 1"},
-        {author : "Bot", text : "Сообщение 2"},
-        {author : "Ваяс", text : "Сообщение 3"},
-        {author : "Bot", text : "Сообщение 4"}
-    ]);
+    const [messages,setMessage] = useState([]);
 
-    return messages.map((message) =>
-        <div>
-            <h3>Сообщение от: {message.author}</h3>
-            <p>{message.text}</p>
-        </div>
+    const answerMessage = useCallback(() => {
+        const newMessageBot = {author:"Bot", text:"Отстань"};
+        setMessage([...messages, newMessageBot]);
+    }, [messages]);
+
+    const pushMessage = useCallback(() => {
+        const newTextMessage = document.getElementById('textMessage').value;
+        const newMessage = {author:"Вася", text: newTextMessage};
+        setMessage([...messages, newMessage]);
+        document.getElementById("textMessage").value = "";
+    }, [messages]);
+
+    return(
+        <>
+        {messages.map((mess) =>
+            <div>
+                <h3>{mess.author}</h3>
+                <p>{mess.text}</p>
+            </div>)
+        }   <input type="text" id="textMessage"></input>
+            <button className="counter-button" onClick={pushMessage}>push</button>
+        </>
     );
+
 }
-/*
-function Message(props) {
-    const [count, setCount] = useState(0);
-
-    const updateCount = () => {
-      setCount(count + 1);
-    }
-
-    return (
-    <div className="Message">
-        <p className="Message-p">Сообщение от: {props.name}</p>
-
-        <span className="counter">{count}</span>
-        <button className="counter-button" onClick={updateCount}>push</button>
-
-    </div>
-    );
-}
-*/
 export default MessageList;
-//export default Message;
