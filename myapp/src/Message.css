@@ -36,6 +36,7 @@ overflow: scroll;
 .messenger__text-str{
     width: -webkit-fill-available;
     border: 0px;
+    border-radius: 20px 0 0 20px;
 }
 
 .messenger__button{
