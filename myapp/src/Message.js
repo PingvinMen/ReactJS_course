@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState} from 'react';
 import './Message.css';
+//import { Button } from '@material-ui/core';
 
 export const MessageList = (props) =>{
 
@@ -10,6 +11,7 @@ export const MessageList = (props) =>{
             const newMessageBot = {author:"Bot", text:"Отстань"};
             setTimeout(function(){
                 setMessage([...messages, newMessageBot]);
+                console.log(messages);
             },1500)
         }
     }, [messages]);
@@ -37,6 +39,5 @@ export const MessageList = (props) =>{
         </div>
         </>
     );
-
 }
 export default MessageList;
