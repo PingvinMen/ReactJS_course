@@ -11,7 +11,6 @@ export const MessageList = (props) =>{
             const newMessageBot = {author:"Bot", text:"Отстань"};
             setTimeout(function(){
                 setMessage([...messages, newMessageBot]);
-                console.log(messages);
             },1500)
         }
     }, [messages]);
