@@ -1,9 +1,5 @@
-//import PropTypes from "prop-types";
-//import { Button } from "@material-ui/core";
-
 import "./App.css";
 import { /*useRef,*/ useEffect, useState, useCallback } from "react";
-//import { Message } from "./components/Message";
 import { MessageList } from "./components/MessageList";
 import { Form } from "./components/Form";
 import { AUTHORS } from "./components/constants";
@@ -40,9 +36,18 @@ function App() {
   }, [messages]);
 
   return (
-    <div>
-      <MessageList messages={messages} />
-      <Form onSendMessage={handleSendMessage} />
+    <div className="message">
+      <div className="message__dialogs">
+      
+      </div>
+      <div className="message__chat">
+        <div className="message__list">
+          <MessageList messages={messages} />
+        </div>
+        <div className="message__control">
+          <Form onSendMessage={handleSendMessage} />
+        </div>
+      </div>
     </div>
   );
 }
