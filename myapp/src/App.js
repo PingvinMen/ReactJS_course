@@ -48,6 +48,7 @@ function App() {
           <Form onSendMessage={handleSendMessage} />
         </div>
       </div>
+
     </div>
   );
 }
