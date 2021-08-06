@@ -1,22 +1,38 @@
-.message{
-  background-color: blue;
-  display: flex;
+.App {
+  text-align: center;
 }
 
-/*Список сообщений*/
-.message__list{
-  background-color: white;
-  border-radius: 18px;
-  width: 500px;
-  height: 600px;
-  overflow: auto;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
-/*Сообщение*/
-.message__item{
-  width: fit-content;
-  background-color: blue;
-  border-radius: 16px;
-  padding: 4px 8px;
-  margin: 2px;
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
