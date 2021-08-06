@@ -1,10 +1,11 @@
-import "./Home.css";
+import "./Chat.css";
 import { /*useRef,*/ useEffect, useState, useCallback } from "react";
 import { MessageList } from "../MessageList";
 import { Form } from "../Form";
 import { AUTHORS } from "../constants";
+import { Dialog } from "../Dialog";
 
-function Home() {
+function Chat() {
   const [messages, setMessages] = useState([]);
 
   const handleSendMessage = useCallback(
@@ -38,7 +39,7 @@ function Home() {
   return (
     <div className="message">
       <div className="message__dialogs">
-      
+        <Dialog />
       </div>
       <div className="message__chat">
         <div className="message__list">
@@ -52,4 +53,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Chat;
