@@ -19,11 +19,17 @@ export const Router = () => {
             </ul>
 
             <Switch>
+                <Route exact path='/'>
+                    <h2>Home</h2>
+                </Route>
                 <Route exact path='/chat'>
                     <Chat />
                 </Route>
                 <Route exact path="/profile">
                     <Profile />
+                </Route>
+                <Route exact path="*">
+                    <h1>404</h1>
                 </Route>
             </Switch>
         </BrowserRouter>
