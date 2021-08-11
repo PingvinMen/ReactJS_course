@@ -1,7 +1,7 @@
 import { PROFILE_TOGGLE_SHOW, PROFILE_DROP_NAME } from "./actionTypes";
 
 const initialState = {
-  show: false,
+  checBox: false,
   name: 'No name'
 };
 
@@ -10,7 +10,7 @@ export const profileReducer = (state = initialState, action) => {
     case PROFILE_TOGGLE_SHOW: {
       return {
         ...state,
-        show: !state.show,
+        checBox: !state.show,
       };
     }
     case PROFILE_DROP_NAME: {
