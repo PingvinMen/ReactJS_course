@@ -19,7 +19,10 @@ export const Profile = () => {
         <>
             <div>Профиль</div>
 
-            <input type="checkbox" onClick={toggleShow}/>
+            <input
+                type="checkbox"
+                onChange={toggleShow}
+            />
         </>
     );
 };
