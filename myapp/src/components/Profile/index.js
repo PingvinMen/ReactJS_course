@@ -1,10 +1,10 @@
 import React from "react";
 //import { store } from "../../store";
 import { PROFILE_TOGGLE_SHOW } from "../../store/actionTypes";
-import { useSelector, useDispatch } from "react-redux";
+import { /*useSelector ,*/ useDispatch } from "react-redux";
 
 export const Profile = () => {
-    const profileState = useSelector((state) => state);
+    //const profileState = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const toggleShow = () => {
@@ -13,15 +13,16 @@ export const Profile = () => {
         });
       };
 
-    console.log(profileState);
+    //console.log(profileState);
 
     return (
         <>
             <div>Профиль</div>
 
-            <input type="checkbox" onClick={toggleShow}/>
+            <input
+                type="checkbox"
+                onChange={toggleShow}
+            />
         </>
     );
 };
-
-/*Я знаю что это не правильно, я постараюсь переделать до проверки(оно только ТИПА работает)*/
