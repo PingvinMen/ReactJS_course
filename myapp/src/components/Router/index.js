@@ -1,37 +1,38 @@
-import React from "react";
-import {BrowserRouter, Link, Switch, Route} from 'react-router-dom';
-import Chat from '../Chat';
-import { Profile } from '../Profile';
+import React, { useState } from "react";
+import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import Profile from "../Profile";
+import Home from "../Home";
+import { ThemeContext } from "../../utils/ThemeContext";
 
 export const Router = () => {
-    return(
-        <BrowserRouter>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/chat">Chat</Link>
-                </li>
-                <li>
-                    <Link to="/profile">profile</Link>
-                </li>
-            </ul>
+  return (
+    <ThemeContext.Provider>
+      <BrowserRouter>
+        <ul>
+          <li>
+            <Link to="/home">Dialog</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
+        </ul>
 
-            <Switch>
-                <Route exact path='/'>
-                    <h2>Home</h2>
-                </Route>
-                <Route exact path='/chat'>
-                    <Chat />
-                </Route>
-                <Route exact path="/profile">
-                    <Profile />
-                </Route>
-                <Route exact path="*">
-                    <h1>404</h1>
-                </Route>
-            </Switch>
-        </BrowserRouter>
-    )
-}
+        <Switch>
+          <Route
+            path="/profile"
+            render={(data) => <Profile match={data.match} history={data.history} />}
+          ></Route>
+          <Route path="/home/:chatId?">
+            <Home />
+          </Route>
+          <Route path="/" exact>
+            <h2>WELCOME</h2>
+          </Route>
+          <Route path="*">
+            <h2>404</h2>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </ThemeContext.Provider>
+  );
+};
