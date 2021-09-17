@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { AUTHORS } from '../constants';
+import React, { useState, useRef, useEffect } from 'react';
+import { AUTHORS } from '../../constants';
 
 export const Form = ({ onSendMessage }) => {
   const [value, setValue] = useState('');
@@ -19,6 +19,10 @@ export const Form = ({ onSendMessage }) => {
     });
     setValue('');
   }
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   return (
     <form onSubmit={handleSubmit}>
