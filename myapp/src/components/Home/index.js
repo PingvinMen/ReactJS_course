@@ -1,48 +1,26 @@
 import "./Home.css";
-import { useEffect, /*useState,*/ useCallback } from "react";
+import { useCallback } from "react";
 import { MessageList } from "../MessageList";
 import { Form } from "../Form";
-import { AUTHORS } from "../../constants";
 import { ChatList } from "../ChatList";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { sendMessage } from "../../store/chats/actions";
+import { sendMessageWithReplay } from "../../store/chats/actions";
+import { selectName } from "../../store/profile/selectors";
 
 function Home() {
   const { chatId } = useParams();
 
   const chats = useSelector(state => state.chats);
+  const name = useSelector(selectName);
   const dispatch = useDispatch();
 
   const handleSendMessage = useCallback(
     (newMessage) => {
-      dispatch(sendMessage(chatId, newMessage));
+      dispatch(sendMessageWithReplay(chatId, {...newMessage, author: name}));
     },
     [chatId]
   );
-
-  useEffect(() => {
-    if (
-      !chatId ||
-      !chats[chatId]?.messages.length ||
-      chats[chatId].messages[chats[chatId].messages.length - 1].author ===
-        AUTHORS.robot
-    ) {
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      const newMessage = {
-        text: "Отстань",
-        author: AUTHORS.robot,
-        id: Date.now(),
-      };
-
-      handleSendMessage(newMessage);
-    }, 1000);
-
-    return () => clearTimeout(timeout);
-  }, [chats]);
 
   return (
     <div className="root">

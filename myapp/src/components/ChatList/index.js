@@ -10,7 +10,7 @@ const Chats = ({ chats }) => {
       <List>
         {Object.values(chats).map((c) => (
           <ListItem key={c.id}>
-            <Link to={`/home/${c.id}`}>{c.name}</Link>
+            <Link to={`/dialog/${c.id}`}>{c.name}</Link>
           </ListItem>
         ))}
         <ListItem>
