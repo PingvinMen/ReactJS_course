@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { AUTHORS } from '../../constants';
+//import { AUTHORS } from '../../constants';
 
 export const Form = ({ onSendMessage }) => {
   const [value, setValue] = useState('');

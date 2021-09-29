@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import Profile from "../Profile";
 import Home from "../Home";
+import { News } from "../News";
 import { ThemeContext } from "../../utils/ThemeContext";
 
 export const Router = () => {
@@ -15,6 +16,9 @@ export const Router = () => {
           <li>
             <Link to="/profile">Profile</Link>
           </li>
+          <li>
+            <Link to="/news">News</Link>
+          </li>
         </ul>
 
         <Switch>
@@ -23,6 +27,9 @@ export const Router = () => {
           </Route>
           <Route path="/dialog/:chatId?">
             <Home />
+          </Route>
+          <Route path="/news">
+            <News />
           </Route>
           <Route path="/" exact>
             <h2>WELCOME</h2>
