@@ -1,24 +1,26 @@
+import React, { useContext } from "react";
 import { List, ListItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { withThemeContext } from "../Message";
 import { AddChat } from "./AddChat";
+import { ChatItem } from "./ChatItem";
 
-const Chats = ({ chats }) => {
+export const ChatList = ({ chats, onDeleteChat, onAddChat }) => {
   return (
     <>
-      
       <List>
         {Object.values(chats).map((c) => (
-          <ListItem key={c.id}>
-            <Link to={`/dialog/${c.id}`}>{c.name}</Link>
-          </ListItem>
+          <ChatItem
+            name={c.name}
+            key={c.id}
+            id={c.id}
+            onDelete={onDeleteChat}
+          />
         ))}
         <ListItem>
-          <AddChat />
+          <AddChat onAddChat={onAddChat} />
         </ListItem>
       </List>
     </>
   );
 };
 
-export const ChatList = withThemeContext(Chats);
