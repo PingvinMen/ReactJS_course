@@ -6,5 +6,5 @@ import { selectAuth } from "../store/profile/selectors";
 export const PublicRoute = ({ ...props }) => {
   const authed = useSelector(selectAuth);
 
-  return !authed ? <Route {...props} /> : <Redirect to="/home" />;
+  return !authed ? <Route {...props} /> : <Redirect to="/" />;
 };

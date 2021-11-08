@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { AUTHORS } from '../../constants';
+import React, { useRef, useEffect } from 'react';
+
 import { useInput } from '../../utils/useInput';
 
 export const Form = ({ onSendMessage }) => {
