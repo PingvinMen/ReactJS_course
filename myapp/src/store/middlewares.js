@@ -1,5 +1,5 @@
-import { ADD_CHAT, SEND_MESSAGE } from "./chats/actionTypes";
-import { addChat, sendMessage } from "./chats/actions";
+import { SEND_MESSAGE } from "./chats/actionTypes";
+import { sendMessage } from "./chats/actions";
 import { AUTHORS } from "../constants";
 
 export const middleware = (store) => (next) => (action) => {

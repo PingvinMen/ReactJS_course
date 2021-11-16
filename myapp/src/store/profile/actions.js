@@ -6,8 +6,6 @@ export const changeName = (payload) => ({
   payload,
 });
 
-// -------------- FIREBASE STUFF -------------- //
-
 const setAuth = (authed) => ({
   type: SET_AUTH,
   payload: authed,

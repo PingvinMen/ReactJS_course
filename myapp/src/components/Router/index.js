@@ -31,7 +31,7 @@ export const Router = () => {
           <Link to="/news">NEWS</Link>
         </li>
       </ul>
-
+      
       <Logout />
 
       <Switch>
@@ -44,9 +44,9 @@ export const Router = () => {
         <PrivateRoute path="/home/:chatId?">
           <Home />
         </PrivateRoute>
-        <PublicRoute path="/news">
+        <Route path="/news">
           <News />
-        </PublicRoute>
+        </Route>
         <PrivateRoute path="/nochat">
           <div> No such chat</div>
           <Link to="/home">HOME</Link>

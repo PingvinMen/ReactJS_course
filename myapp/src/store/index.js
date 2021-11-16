@@ -6,7 +6,7 @@ import storage from "redux-persist/lib/storage";
 
 import { profileReducer } from "./profile/reducer";
 import { chatsReducer } from "./chats/reducer";
-import { middleware } from "./middlewares";
+//import { middleware } from "./middlewares";
 // import { chatsSaga } from "./chats/saga";
 import { articlesReducer } from "./articles/reducer";
 import thunk from "redux-thunk";
