@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { API_URL } from "../../constants";
 import { selectArticlesLoading, selectArticlesError, selectArticles } from "../../store/articles/selectors";
 import { getArticles } from "../../store/articles/actions";
 
